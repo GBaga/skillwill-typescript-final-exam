@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#0a192f',
+                        'navy-light': '#112240',
+                        crimson: '#e63946',
+                        'crimson-hover': '#c1121f',
+                        offwhite: '#f1faee'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-offwhite text-navy font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-navy text-white p-6 shadow-md border-b-4 border-crimson">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold tracking-tight uppercase">Library System</h1>
+            <!-- Search Bar -->
+            <div class="relative w-64">
+                <input type="text" id="searchInput" placeholder="Search by title..." 
+                       class="w-full bg-navy-light text-white border-2 border-transparent focus:border-crimson p-2 outline-none transition-colors placeholder-gray-400">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto flex-grow p-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+        
+        <!-- Sidebar / Add Book Form -->
+        <aside class="md:col-span-1">
+            <div class="bg-white p-6 shadow-lg border-t-4 border-navy">
+                <h2 class="text-xl font-bold mb-4 uppercase text-navy">Add New Book</h2>
+                <form id="addBookForm" class="flex flex-col gap-4">
+                    <div>
+                        <label for="title" class="block text-sm font-semibold mb-1">Title</label>
+                        <input type="text" id="title" required
+                               class="w-full border-2 border-gray-300 p-2 focus:border-navy outline-none transition-colors">
+                    </div>
+                    <div>
+                        <label for="author" class="block text-sm font-semibold mb-1">Author</label>
+                        <input type="text" id="author" required
+                               class="w-full border-2 border-gray-300 p-2 focus:border-navy outline-none transition-colors">
+                    </div>
+                    <div>
+                        <label for="year" class="block text-sm font-semibold mb-1">Year</label>
+                        <input type="number" id="year" required min="1000" max="2100"
+                               class="w-full border-2 border-gray-300 p-2 focus:border-navy outline-none transition-colors">
+                    </div>
+                    <button type="submit" 
+                            class="bg-crimson text-white font-bold py-3 mt-2 hover:bg-crimson-hover transition-colors uppercase tracking-wide">
+                        Add Book
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Employee/Developer Test Area (for OOP demonstration) -->
+            <div class="mt-8 bg-navy-light text-white p-6 shadow-lg">
+                <h2 class="text-xl font-bold mb-4 uppercase border-b border-gray-600 pb-2">System Info</h2>
+                <div id="systemInfo" class="text-sm space-y-2 opacity-80">
+                    <!-- populated by JS -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Book List Area -->
+        <section class="md:col-span-3">
+            <div class="flex justify-between items-end mb-6">
+                <h2 class="text-2xl font-bold uppercase text-navy">Book Inventory</h2>
+                <span id="bookCount" class="text-sm font-semibold text-gray-500 uppercase">Total: 0</span>
+            </div>
+            
+            <div id="booksContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Books will be rendered here dynamically -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white text-center p-4 mt-auto">
+        <p class="text-sm opacity-70">© 2026 Library Management System. TypeScript Final Exam.</p>
+    </footer>
+
+    <!-- Compiled TS Code -->
+    <script src="dist/app.js"></script>
+</body>
+</html>

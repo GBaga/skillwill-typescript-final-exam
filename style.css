@@ -1,0 +1,35 @@
+/* Custom styles overriding or complementing Tailwind */
+
+/* Ensure absolutely no rounded corners on buttons/inputs by default */
+input, button, select, textarea {
+    border-radius: 0 !important;
+}
+
+/* Sharp shadow for book cards */
+.book-card {
+    transition: all 0.2s ease-in-out;
+    border: 2px solid #e5e7eb; /* gray-200 */
+}
+
+.book-card:hover {
+    transform: translateY(-4px) translateX(-4px);
+    box-shadow: 6px 6px 0px 0px #0a192f; /* navy shadow for sharp brutalist effect */
+    border-color: #0a192f;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1faee; 
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #0a192f; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e63946; 
+}
