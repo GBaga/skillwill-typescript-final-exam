@@ -204,5 +204,5 @@ renderBooks();
 // OOP Demonstration
 const emp1 = new Employee('Giorgi');
 emp1.logName();
-const dev1 = new Developer('Nika', 'TypeScript');
+const dev1 = new Developer('Goga', 'TypeScript');
 dev1.describeAction();

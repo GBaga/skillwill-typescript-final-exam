@@ -99,15 +99,15 @@ if (stored.length === 0) saveToStorage(books);
 
 // ─── DOM Elements ─────────────────────────────────────────────────────────────
 const booksContainer = document.getElementById('booksContainer') as HTMLDivElement;
-const bookCount      = document.getElementById('bookCount')      as HTMLSpanElement;
-const addBookForm    = document.getElementById('addBookForm')    as HTMLFormElement;
-const searchInput    = document.getElementById('searchInput')    as HTMLInputElement;
-const titleInput     = document.getElementById('title')          as HTMLInputElement;
-const authorInput    = document.getElementById('author')         as HTMLInputElement;
-const yearInput      = document.getElementById('year')           as HTMLInputElement;
-const formTitle      = document.getElementById('formTitle')      as HTMLHeadingElement;
-const submitBtn      = document.getElementById('submitBtn')      as HTMLButtonElement;
-const cancelEditBtn  = document.getElementById('cancelEditBtn')  as HTMLButtonElement;
+const bookCount = document.getElementById('bookCount') as HTMLSpanElement;
+const addBookForm = document.getElementById('addBookForm') as HTMLFormElement;
+const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+const titleInput = document.getElementById('title') as HTMLInputElement;
+const authorInput = document.getElementById('author') as HTMLInputElement;
+const yearInput = document.getElementById('year') as HTMLInputElement;
+const formTitle = document.getElementById('formTitle') as HTMLHeadingElement;
+const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
+const cancelEditBtn = document.getElementById('cancelEditBtn') as HTMLButtonElement;
 
 // ─── Render ───────────────────────────────────────────────────────────────────
 function renderBooks(): void {
@@ -171,9 +171,9 @@ function setEditMode(book: Book): void {
     submitBtn.textContent = 'Update Book';
     submitBtn.className = 'bg-navy text-white font-bold py-3 mt-2 hover:bg-navy-light transition-colors uppercase tracking-wide';
     cancelEditBtn.classList.remove('hidden');
-    titleInput.value  = book.title;
+    titleInput.value = book.title;
     authorInput.value = book.author;
-    yearInput.value   = String(book.year);
+    yearInput.value = String(book.year);
     addBookForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
@@ -185,9 +185,9 @@ addBookForm.addEventListener('submit', (e: Event) => {
         // EDIT MODE
         const idx: number = books.findIndex((b: Book) => b.id === editingId);
         if (idx !== -1) {
-            books[idx].title  = titleInput.value;
+            books[idx].title = titleInput.value;
             books[idx].author = authorInput.value;
-            books[idx].year   = parseInt(yearInput.value);
+            books[idx].year = parseInt(yearInput.value);
         }
         saveToStorage(books);
         setAddMode();
@@ -255,5 +255,5 @@ renderBooks();
 const emp1: Employee = new Employee('Giorgi');
 emp1.logName();
 
-const dev1: Developer = new Developer('Nika', 'TypeScript');
+const dev1: Developer = new Developer('Goga', 'TypeScript');
 dev1.describeAction();
