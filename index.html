@@ -49,7 +49,7 @@
         <!-- Sidebar / Add Book Form -->
         <aside class="md:col-span-1">
             <div class="bg-white p-6 shadow-lg border-t-4 border-navy">
-                <h2 class="text-xl font-bold mb-4 uppercase text-navy">Add New Book</h2>
+                <h2 id="formTitle" class="text-xl font-bold mb-4 uppercase text-navy">Add New Book</h2>
                 <form id="addBookForm" class="flex flex-col gap-4">
                     <div>
                         <label for="title" class="block text-sm font-semibold mb-1">Title</label>
@@ -66,9 +66,13 @@
                         <input type="number" id="year" required min="1000" max="2100"
                                class="w-full border-2 border-gray-300 p-2 focus:border-navy outline-none transition-colors">
                     </div>
-                    <button type="submit" 
+                    <button type="submit" id="submitBtn"
                             class="bg-crimson text-white font-bold py-3 mt-2 hover:bg-crimson-hover transition-colors uppercase tracking-wide">
                         Add Book
+                    </button>
+                    <button type="button" id="cancelEditBtn"
+                            class="hidden bg-gray-200 text-navy font-bold py-2 hover:bg-gray-300 transition-colors uppercase tracking-wide">
+                        Cancel Edit
                     </button>
                 </form>
             </div>
